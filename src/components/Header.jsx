@@ -60,9 +60,7 @@ function Header() {
     isActive ? "nav-link active" : "nav-link";
 
   const mobileNavLinkClass = ({ isActive }) =>
-    isActive
-      ? "mobile-nav-link active"
-      : "mobile-nav-link";
+    isActive ? "mobile-nav-link active" : "mobile-nav-link";
 
   const showDashboard =
     user &&
@@ -74,7 +72,6 @@ function Header() {
     <header className="header">
       <div className="header-container">
 
-        {/* Logo */}
         <Link
           to="/"
           className="logo"
@@ -87,79 +84,49 @@ function Header() {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
         <nav className="desktop-nav">
-          <NavLink
-            to="/"
-            className={navLinkClass}
-          >
+          <NavLink to="/" className={navLinkClass}>
             Home
           </NavLink>
 
-          <NavLink
-            to="/products"
-            className={navLinkClass}
-          >
+          <NavLink to="/products" className={navLinkClass}>
             Products
           </NavLink>
 
-          <NavLink
-            to="/about"
-            className={navLinkClass}
-          >
+          <NavLink to="/about" className={navLinkClass}>
             About
           </NavLink>
 
-          <NavLink
-            to="/contact"
-            className={navLinkClass}
-          >
+          <NavLink to="/contact" className={navLinkClass}>
             Contact
           </NavLink>
         </nav>
 
-        {/* Search */}
         <div className="search-box">
           <input
             type="text"
             placeholder="Search products..."
           />
 
-          <button
-            type="button"
-            aria-label="Search"
-          >
+          <button type="button" aria-label="Search">
             🔍
           </button>
         </div>
 
-        {/* Desktop Actions */}
         <div className="header-actions">
 
-          {/* Cart */}
-          <Link
-            to="/cart"
-            className="cart-button"
-          >
+          <Link to="/cart" className="cart-button">
             <span className="cart-icon">🛒</span>
-
-            <span className="cart-text">
-              Cart
-            </span>
-
-            <span className="cart-count">
-              0
-            </span>
+            <span className="cart-text">Cart</span>
+            <span className="cart-count">0</span>
           </Link>
 
           {user ? (
             <>
-              {/* Role */}
               <span className="user-role">
                 {user.role?.toUpperCase()}
               </span>
 
-              {/* Dashboard - Only ADMIN and SELLER */}
               {showDashboard && (
                 <button
                   type="button"
@@ -170,7 +137,6 @@ function Header() {
                 </button>
               )}
 
-              {/* Profile */}
               <button
                 type="button"
                 className="profile-button"
@@ -183,7 +149,6 @@ function Header() {
             </>
           ) : (
             <>
-              {/* Login */}
               <Link
                 to="/login"
                 className="login-button"
@@ -191,7 +156,6 @@ function Header() {
                 Login
               </Link>
 
-              {/* Register */}
               <Link
                 to="/register"
                 className="register-button"
@@ -202,7 +166,6 @@ function Header() {
           )}
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           type="button"
           className="mobile-menu-button"
@@ -217,11 +180,9 @@ function Header() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="mobile-menu">
 
-          {/* Navigation */}
           <NavLink
             to="/"
             onClick={closeMobileMenu}
@@ -254,10 +215,8 @@ function Header() {
             Contact
           </NavLink>
 
-          {/* Mobile Actions */}
           <div className="mobile-actions">
 
-            {/* Cart */}
             <Link
               to="/cart"
               className="mobile-cart"
@@ -268,12 +227,10 @@ function Header() {
 
             {user ? (
               <>
-                {/* Role */}
                 <div className="mobile-user-role">
                   👤 {user.role?.toUpperCase()}
                 </div>
 
-                {/* Dashboard - Only ADMIN and SELLER */}
                 {showDashboard && (
                   <button
                     type="button"
@@ -284,7 +241,6 @@ function Header() {
                   </button>
                 )}
 
-                {/* Profile */}
                 <button
                   type="button"
                   className="mobile-profile"
@@ -295,7 +251,6 @@ function Header() {
               </>
             ) : (
               <>
-                {/* Login */}
                 <Link
                   to="/login"
                   className="mobile-login"
@@ -304,7 +259,6 @@ function Header() {
                   Login
                 </Link>
 
-                {/* Register */}
                 <Link
                   to="/register"
                   className="mobile-register"
