@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Dashboard_seller.css";
+import Addproduct from "./Addproduct.jsx";
 
 function Dashboard_seller() {
   const [activeMenu, setActiveMenu] = useState("dashboard");
@@ -604,8 +605,11 @@ function Dashboard_seller() {
           </section>
         )}
 
+        {activeMenu === "add-product" && <Addproduct />}
+
         {/* OTHER SECTIONS */}
-        {activeMenu !== "dashboard" && (
+        {activeMenu !== "dashboard" &&
+          activeMenu !== "add-product" && (
           <section className="placeholder-page">
 
             <div className="placeholder-icon">
